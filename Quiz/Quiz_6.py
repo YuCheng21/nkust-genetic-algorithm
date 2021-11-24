@@ -3,14 +3,14 @@ import matplotlib.pyplot as plt
 import random
 
 # 初始值
-x = [100, 50]
+x = [100, 50, 60]
 
 # 初始溫度
 t0 = 100
 temp_for_plot = t0
 
 # 跑幾回合
-run = 100
+run = 1000
 
 # 一次找到幾個鄰居
 iter = 10
