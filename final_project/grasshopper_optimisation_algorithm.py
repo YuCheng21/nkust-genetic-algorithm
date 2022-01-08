@@ -179,13 +179,13 @@ kwargs = {
     'l_arg': 2
 }
 GOA = GrasshopperOptimisationAlgorithm(**kwargs)
+GOA.punish_fitness_value = 5
 print(GOA.__doc__)
 
 # ============= Use P01 Dataset =============
 GOA.name = 'P01'
 GOA.capacity = 165
 GOA.optimal = [1, 1, 1, 1, 0, 1, 0, 0, 0, 0]
-GOA.punish_fitness_value = 5
 GOA.reset_things_information()
 GOA.add_things_information(23, 92)
 GOA.add_things_information(31, 57)
@@ -209,7 +209,6 @@ GOA.plot_fitness_trend()
 GOA.name = 'P02'
 GOA.capacity = 26
 GOA.optimal = [0, 1, 1, 1, 0]
-GOA.punish_fitness_value = 5
 GOA.reset_things_information()
 GOA.add_things_information(12, 24)
 GOA.add_things_information(7, 13)
