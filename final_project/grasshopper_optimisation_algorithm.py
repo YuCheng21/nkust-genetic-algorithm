@@ -169,14 +169,14 @@ class GrasshopperOptimisationAlgorithm:
 
 # Setting GOA
 kwargs = {
-    'max_iter': 9,
+    'max_iter': 10,
     'c_max': 1,
-    'c_min': 1e-5,
+    'c_min': 4e-5,
     'upper_bound': 1,
     'lower_bound': 0,
-    'dimension': 1,
-    'f_arg': 1,
-    'l_arg': 2
+    'dimension': None,
+    'f_arg': 0.5,
+    'l_arg': 1
 }
 GOA = GrasshopperOptimisationAlgorithm(**kwargs)
 GOA.punish_fitness_value = 5
@@ -185,7 +185,6 @@ print(GOA.__doc__)
 # ============= Use P01 Dataset =============
 GOA.name = 'P01'
 GOA.capacity = 165
-GOA.optimal = [1, 1, 1, 1, 0, 1, 0, 0, 0, 0]
 GOA.reset_things_information()
 GOA.add_things_information(23, 92)
 GOA.add_things_information(31, 57)
@@ -197,6 +196,8 @@ GOA.add_things_information(63, 67)
 GOA.add_things_information(85, 84)
 GOA.add_things_information(89, 87)
 GOA.add_things_information(82, 72)
+GOA.dimension = len(GOA.things_information)
+GOA.optimal = [1, 1, 1, 1, 0, 1, 0, 0, 0, 0]
 
 # Generate random data
 GOA.generate_random_data(30)
@@ -205,20 +206,21 @@ GOA.generate_random_data(30)
 GOA.iterator()
 GOA.plot_fitness_trend()
 
-# ============= Use P02 Dataset =============
-GOA.name = 'P02'
-GOA.capacity = 26
-GOA.optimal = [0, 1, 1, 1, 0]
-GOA.reset_things_information()
-GOA.add_things_information(12, 24)
-GOA.add_things_information(7, 13)
-GOA.add_things_information(11, 23)
-GOA.add_things_information(8, 15)
-GOA.add_things_information(9, 16)
-
-# Generate random data
-GOA.generate_random_data(30)
-
-# Start GOA
-GOA.iterator()
-GOA.plot_fitness_trend()
+# # ============= Use P02 Dataset =============
+# GOA.name = 'P02'
+# GOA.capacity = 26
+# GOA.reset_things_information()
+# GOA.add_things_information(12, 24)
+# GOA.add_things_information(7, 13)
+# GOA.add_things_information(11, 23)
+# GOA.add_things_information(8, 15)
+# GOA.add_things_information(9, 16)
+# GOA.dimension = len(GOA.things_information)
+# GOA.optimal = [0, 1, 1, 1, 0]
+#
+# # Generate random data
+# GOA.generate_random_data(30)
+#
+# # Start GOA
+# GOA.iterator()
+# GOA.plot_fitness_trend()
