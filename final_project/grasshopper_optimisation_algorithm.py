@@ -8,9 +8,9 @@ Dataset: https://people.sc.fsu.edu/~jburkardt/datasets/knapsack_01/knapsack_01.h
 """
 
 
-class GrasshopperOptimisationAlgorithm:
+class GrasshopperOptimizationAlgorithm:
     """
-    Grasshopper Optimisation Algorithm for 01 Knapsack Problem
+    Grasshopper Optimization Algorithm for 01 Knapsack Problem
     """
 
     def __init__(self, max_iter, c_max, c_min, upper_bound, lower_bound, dimension, f_arg, l_arg):
@@ -178,7 +178,7 @@ kwargs = {
     'f_arg': 0.5,
     'l_arg': 1
 }
-GOA = GrasshopperOptimisationAlgorithm(**kwargs)
+GOA = GrasshopperOptimizationAlgorithm(**kwargs)
 GOA.punish_fitness_value = 5
 print(GOA.__doc__)
 
@@ -206,21 +206,21 @@ GOA.generate_random_data(30)
 GOA.iterator()
 GOA.plot_fitness_trend()
 
-# # ============= Use P02 Dataset =============
-# GOA.name = 'P02'
-# GOA.capacity = 26
-# GOA.reset_things_information()
-# GOA.add_things_information(12, 24)
-# GOA.add_things_information(7, 13)
-# GOA.add_things_information(11, 23)
-# GOA.add_things_information(8, 15)
-# GOA.add_things_information(9, 16)
-# GOA.dimension = len(GOA.things_information)
-# GOA.optimal = [0, 1, 1, 1, 0]
-#
-# # Generate random data
-# GOA.generate_random_data(30)
-#
-# # Start GOA
-# GOA.iterator()
-# GOA.plot_fitness_trend()
+# ============= Use P02 Dataset =============
+GOA.name = 'P02'
+GOA.capacity = 26
+GOA.reset_things_information()
+GOA.add_things_information(12, 24)
+GOA.add_things_information(7, 13)
+GOA.add_things_information(11, 23)
+GOA.add_things_information(8, 15)
+GOA.add_things_information(9, 16)
+GOA.dimension = len(GOA.things_information)
+GOA.optimal = [0, 1, 1, 1, 0]
+
+# Generate random data
+GOA.generate_random_data(30)
+
+# Start GOA
+GOA.iterator()
+GOA.plot_fitness_trend()
