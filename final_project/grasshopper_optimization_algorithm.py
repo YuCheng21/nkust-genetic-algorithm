@@ -123,9 +123,9 @@ class GrasshopperOptimizationAlgorithm:
 
     def print_current_state(self):
         print('===================================================')
-        print(f'[{self.current_iteration}]')
-        # print(*self.bags, sep='\n')
-        print(self.best_fitness)
+        print(f'Iteration: {self.current_iteration}')
+        print(*self.bags, sep='\n')
+        print(f'Best fitness:\n {self.best_fitness}')
 
     def iterator(self):
         print(f'[{self.name}]')
